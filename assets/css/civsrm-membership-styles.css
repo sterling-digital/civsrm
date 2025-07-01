@@ -1,0 +1,212 @@
+/**
+ * WooCommerce Memberships Integration Styles
+ * 
+ * Styles for membership restriction messages and debug information
+ * 
+ * @package CI_vs_RM
+ * @since 2.0.2
+ */
+
+/* Restriction Messages */
+.civsrm-restriction-message,
+.civsrm-shortcode-restriction {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-left: 4px solid #dc3545;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.civsrm-restriction-message p,
+.civsrm-shortcode-restriction p {
+    margin: 0 0 10px 0;
+    color: #495057;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.civsrm-restriction-message p:last-child,
+.civsrm-shortcode-restriction p:last-child {
+    margin-bottom: 0;
+}
+
+/* Login Required Messages */
+.civsrm-login-required {
+    border-left-color: #ffc107;
+    background: #fff3cd;
+}
+
+.civsrm-login-required p {
+    color: #856404;
+}
+
+/* Membership Required Messages */
+.civsrm-membership-required {
+    border-left-color: #17a2b8;
+    background: #d1ecf1;
+}
+
+.civsrm-membership-required p {
+    color: #0c5460;
+}
+
+/* Action Links */
+.civsrm-login-link,
+.civsrm-membership-link {
+    display: inline-block;
+    background: #007cba;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.civsrm-login-link:hover,
+.civsrm-membership-link:hover {
+    background: #005a87;
+    color: #ffffff !important;
+}
+
+.civsrm-login-link:focus,
+.civsrm-membership-link:focus {
+    outline: 2px solid #005a87;
+    outline-offset: 2px;
+}
+
+/* WooCommerce Memberships Integration */
+.wc-memberships-restriction-message.civsrm-shortcode-restriction {
+    /* Inherit WooCommerce Memberships styles but add our spacing */
+    margin: 20px 0;
+}
+
+/* Debug Information Styles */
+#civsrm-debug {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    padding: 15px;
+    font-size: 12px;
+    max-width: 450px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#civsrm-debug strong {
+    color: #ffc107;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#civsrm-debug pre {
+    color: #ffffff;
+    font-size: 11px;
+    margin: 5px 0 15px 0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#civsrm-debug::-webkit-scrollbar {
+    width: 6px;
+}
+
+#civsrm-debug::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+#civsrm-debug::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+#civsrm-debug::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .civsrm-restriction-message,
+    .civsrm-shortcode-restriction {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .civsrm-restriction-message p,
+    .civsrm-shortcode-restriction p {
+        font-size: 14px;
+    }
+    
+    .civsrm-login-link,
+    .civsrm-membership-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    #civsrm-debug {
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+        max-width: none;
+        font-size: 11px;
+        padding: 10px;
+        max-height: 300px;
+    }
+    
+    #civsrm-debug pre {
+        font-size: 10px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .civsrm-restriction-message,
+    .civsrm-shortcode-restriction {
+        border-width: 2px;
+        border-left-width: 6px;
+    }
+    
+    .civsrm-login-link,
+    .civsrm-membership-link {
+        border: 2px solid #ffffff;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .civsrm-login-link,
+    .civsrm-membership-link {
+        transition: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #civsrm-debug {
+        display: none !important;
+    }
+    
+    .civsrm-restriction-message,
+    .civsrm-shortcode-restriction {
+        border: 2px solid #000000;
+        background: #ffffff;
+    }
+    
+    .civsrm-restriction-message p,
+    .civsrm-shortcode-restriction p {
+        color: #000000;
+    }
+}

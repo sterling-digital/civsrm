@@ -1,0 +1,300 @@
+/* CIVSRM Custom Styles */
+
+.page-template-page-civsrm #primary {
+	background-color: white;
+	width: 100%;
+}
+
+.civsrm-search-box {
+	margin-top: 36px;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#civsrm-search {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+#civsrm-search:focus {
+    outline: none;
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+}
+
+.search-buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#filter-btn {
+    background-color: var(--e-global-color-primary);
+    color: white;
+    position: relative;
+}
+
+#filter-btn:hover {
+    background-color: #ffc107;
+}
+
+#filter-btn.active {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+#filter-btn.active:hover {
+    background-color: var(--e-global-color-primary);
+}
+
+/* Filter Panel Styles */
+.filter-panel {
+    width: 100%;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+#clear-filters-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+#clear-filters-btn:hover {
+    background-color: #c82333;
+}
+
+.filter-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: flex-start;
+	cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-checkbox:hover {
+    background-color: #f8f9fa;
+}
+
+.filter-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.filter-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #007cba;
+    border-color: #007cba;
+}
+
+.filter-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .filter-checkboxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-panel {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-checkboxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.no-results {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 1rem;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.no-results p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.civsrm-items {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ci-items, .rm-items {
+    flex: 1;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.civsrm-item {
+    margin-bottom: 1.5rem;
+}
+
+.civsrm-items h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+	position: sticky;
+	top: 72px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.civsrm-item .description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.civsrm-container {
+	padding: 24px;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.civsrm-category-name {
+	position: sticky;
+	top: 0px;
+	padding: 36px;
+    background: white;
+	text-align: center;
+	font-size: 18px;
+}
+
+.ci-items, .rm-items {
+	max-width: 50%;
+}
+
+.ci-items {
+	background-color: honeydew;
+}
+
+.rm-items {
+	background-color: aliceblue;
+	margin-left: auto;
+}
+
+.ci-items h4 {
+	color: darkgreen;
+	background-color: honeydew;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.rm-items h4 {
+	color: var(--e-global-color-primary);
+	background-color: aliceblue;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.civsrm-item mark {
+	background-color: yellow;
+}
+
+.title-container * {
+	text-align: center;
+}
+
+.title-container h1 {
+	color: var(--e-global-color-primary);
+    font-family: var(--e-global-typography-primary-font-family), Open Sans;
+    font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+@media (max-width: 919px) {
+  .civsrm-items h4 {
+    font-size: 16px;
+	font-weight: 600;
+  }
+}
